@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+
+
+
+ <div class="login">
+	<h1>Personal Loan Campaign</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+		<input type="text" name="Experience" placeholder="Experience" required="required" />
+        <input type="text" name="Income" placeholder="Yearsly Income 000 USD" required="required" />
+		<input type="text" name="CCAvg" placeholder="Average Spending on Credit Card 000 USD" required="required" />
+        <input type="text" name="Mortgage" placeholder="Mortgage 000 USD" required="required" />
+        <input type="text" name="Securities Account" placeholder="Securities Account" required="required" />
+        <input type="text" name="CD Account" placeholder="Certificate of Deposite Account" required="required" />
+        <input type="text" name="Online" placeholder="Internet Banking" required="required" />
+        <input type="text" name="CreditCard" placeholder="CreditCard" required="required" />
+        <input type="text" name="Family_1" placeholder="One Member Family?" required="required" />
+		<input type="text" name="Family_2" placeholder="Two Member Family?" required="required" />
+        <input type="text" name="Family_3" placeholder="Three Member Family?" required="required" />
+		<input type="text" name="Familiy_4" placeholder="Four Member Family?" required="required" />
+        <input type="text" name="Education_1" placeholder="Undergraduate or lower" required="required" />
+        <input type="text" name="Education_2" placeholder="Graduate" required="required" />
+        <input type="text" name="Education_3" placeholder="Advanced/Professional" required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Check if The Customer will accept loan offer or not</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
